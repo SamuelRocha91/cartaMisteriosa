@@ -52,7 +52,18 @@ function addCarta() {
   button.addEventListener('click', (event) => criarCarta(event));
 }
 
+function contadorDePalavras() {
+  const p = document.getElementById('carta-contador');
+  const button = document.querySelector('button');
+  const input = document.querySelector('input');
+  button.addEventListener('click', () => {
+    const arrayOfWord = input.value.split(' ');
+    p.innerText = `${arrayOfWord.length}`;
+  });
+}
+
 window.onload = () => {
   addCarta();
   wordModifier();
+  contadorDePalavras();
 };
