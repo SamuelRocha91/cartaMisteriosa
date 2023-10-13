@@ -1,3 +1,4 @@
+// Gera números aleatórios sob a forma de um array, respeitando os limites de classes por grupo
 function randomNumber() {
   const nums = [3, 3, 2, 2];
   for (let i = 0; i < nums.length; i += 1) {
@@ -5,7 +6,7 @@ function randomNumber() {
   }
   return nums;
 }
-
+// gera um conjunto de classes aleatórias para cada numero aleatório fornecido sob a forma de um array;
 function generationClassForWord(ran) {
   const style = ['newspaper', 'magazine1', 'magazine2'];
   const size = ['medium', 'big', 'reallybig'];
@@ -15,6 +16,7 @@ function generationClassForWord(ran) {
   return styleSpan;
 }
 
+// captura uma palavra da carta clicada na tela e modifica suas classes.
 function wordModifier() {
   const p = document.querySelector('p');
   p.addEventListener('click', (event) => {
@@ -24,6 +26,7 @@ function wordModifier() {
   });
 }
 
+// cria o elemento span a guardar as palavras da carta;
 function createSpan(words, i, ran) {
   const span = document.createElement('span');
   span.id = 'criar-carta';
@@ -32,6 +35,7 @@ function createSpan(words, i, ran) {
   return span;
 }
 
+// gera a carta ou uma mensagem de adequação a depender do digitado.
 function criarCarta(event) {
   const input = document.querySelector('input');
   const p = document.querySelector('p');
@@ -51,11 +55,13 @@ function criarCarta(event) {
   }
 }
 
+// função reduzida que escuta o click para escrever a carta no botão.
 function addCarta() {
   const button = document.querySelector('button');
   button.addEventListener('click', (event) => criarCarta(event));
 }
 
+// conta o número de palavras contidos na carta e o adiciona na tela.
 function contadorDePalavras() {
   const p = document.getElementById('carta-contador');
   const button = document.querySelector('button');
