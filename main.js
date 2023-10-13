@@ -1,5 +1,9 @@
-function randomNumber(n) {
-  return Math.floor(Math.random() * n);
+function randomNumber() {
+  const nums = [3, 3, 2, 2];
+  for (let i = 0; i < nums.length; i += 1) {
+    nums[i] = Math.floor(Math.random() * nums[i]);
+  }
+  return nums;
 }
 
 function generationClassForWord(ran) {
@@ -15,7 +19,7 @@ function wordModifier() {
   const p = document.querySelector('p');
   p.addEventListener('click', (event) => {
     const span = event.target;
-    const randomNUmbers = [randomNumber(3), randomNumber(3), randomNumber(2), randomNumber(2)];
+    const randomNUmbers = randomNumber();
     span.className = generationClassForWord(randomNUmbers);
   });
 }
@@ -32,7 +36,7 @@ function criarCarta(event) {
   const input = document.querySelector('input');
   const p = document.querySelector('p');
   event.preventDefault();
-  const randomNUmbers = [randomNumber(3), randomNumber(3), randomNumber(3), randomNumber(3)];
+  const randomNUmbers = randomNumber();
   p.innerHTML = '';
   if (!input.value || input.value.trim().length === 0) {
     const span = document.createElement('span');
